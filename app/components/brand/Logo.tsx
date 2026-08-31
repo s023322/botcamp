@@ -1,28 +1,30 @@
+"use client";
+
 import LogoSvg from "@/botcamp.svg";
 import { cn } from "@sglara/cn";
+import { motion, MotionProps } from "motion/react";
+import { ComponentProps } from "react";
 
 const Logo = ({
   withText,
   className,
+  ...props
 }: {
   withText?: boolean;
-  className?: string;
-}) => {
-  const combinedClassName = cn(
-    "flex items-center gap-x-1 text-red-400",
-    className,
+} & ComponentProps<"span"> &
+  MotionProps) => {
+  const combinedClassName = cn("tracking-normal text-red-400", className);
+  const logoImage = (
+    <LogoSvg className="mt-[-0.21875em] inline-block size-[1em]" />
   );
-  const logoImage = <LogoSvg width={32} height={32} />;
 
   return (
-    <div className={combinedClassName}>
+    <motion.span {...props} className={combinedClassName}>
       {logoImage}
       {withText && (
-        <p className="font-body trim-both cap-alpha pr-2.5 text-xl font-bold">
-          Botcamp
-        </p>
+        <span className="font-body inline-block font-bold">otcamp</span>
       )}
-    </div>
+    </motion.span>
   );
 };
 

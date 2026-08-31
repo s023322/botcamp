@@ -4,7 +4,15 @@ import { PropsWithChildren } from "react";
 const LenisProvider = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <ReactLenis root />
+      <ReactLenis
+        root
+        options={{
+          lerp: 0.12,
+          duration: 0.8,
+          smoothWheel: true,
+          wheelMultiplier: 1.1,
+        }}
+      />
       {children}
     </>
   );

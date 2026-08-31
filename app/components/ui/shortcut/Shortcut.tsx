@@ -8,7 +8,7 @@ const Shortcut = ({
   keys: string;
 }) => {
   const combinedClassName = cn(
-    "cap-alpha rounded-md bg-zinc-50/20 p-1 font-mono text-sm font-medium text-zinc-50",
+    "cap-alpha rounded-xs bg-taupe-50/20 p-1 font-mono text-sm font-medium text-taupe-50",
     className,
   );
 

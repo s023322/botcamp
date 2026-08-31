@@ -4,7 +4,7 @@ const ResponsiveWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div
       id="resp"
-      className="grid-container relative w-full flex-1 flex-col items-stretch text-zinc-50"
+      className="grid-cols-responsive grid-row-taupe-800 relative grid w-full flex-1 grid-flow-row auto-rows-min flex-col items-stretch"
     >
       {children}
     </div>

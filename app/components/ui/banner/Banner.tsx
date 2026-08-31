@@ -15,9 +15,9 @@ const Banner = ({ children }: PropsWithChildren) => {
         <ResponsiveCols
           as={motion.div}
           exit={{ height: 0, padding: 0 }}
-          className="overflow-y-hidden border-b border-b-red-900/15 bg-red-950/50 py-2 max-md:hidden"
+          className="overflow-y-hidden border-b border-b-red-900/15 bg-red-950/50 max-md:hidden"
         >
-          <CenteredCol className="flex-row">
+          <CenteredCol className="flex-row py-2">
             <div className="flex flex-1 items-center justify-center gap-x-2">
               {children}
             </div>
@@ -33,6 +33,7 @@ const Banner = ({ children }: PropsWithChildren) => {
                 as="button"
                 size="iconCompact"
                 onClick={() => setVisible(false)}
+                aria-label="Close banner"
               >
                 <CloseRegular size={16} />
               </Button>
