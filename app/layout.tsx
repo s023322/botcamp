@@ -50,9 +50,8 @@ const draftingMono = localFont({
   ],
   variable: "--font-drafting-mono",
   display: "swap",
-  adjustFontFallback: false,
+  adjustFontFallback: "Arial",
   fallback: [
-    "DraftingMono Fallback",
     "ui-monospace",
     "SFMono-Regular",
     "Menlo",
@@ -63,7 +62,6 @@ const draftingMono = localFont({
     "monospace",
   ],
 });
-
 const diamondGrotesk = localFont({
   src: "./fonts/DiamondGrotesk/DiamondGrotesk-VF.ttf",
   variable: "--font-diamond-grotesk",
@@ -79,7 +77,6 @@ const diamondGrotesk = localFont({
     "sans-serif",
   ],
 });
-
 const zarathustra = localFont({
   src: "./fonts/Zarathustra/zarathustra-v01.otf",
   variable: "--font-zarathustra",

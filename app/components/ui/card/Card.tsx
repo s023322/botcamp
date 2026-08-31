@@ -1,11 +1,11 @@
 import { cn } from "@sglara/cn";
-import { ComponentProps } from "react";
+import { ComponentPropsWithoutRef } from "react";
 
-const Card = ({
+const Root = ({
   className,
   subgrid = false,
   ...props
-}: { subgrid?: boolean } & ComponentProps<"div">) => {
+}: { subgrid?: boolean } & ComponentPropsWithoutRef<"div">) => {
   return (
     <div
       className={cn(
@@ -21,13 +21,13 @@ const Card = ({
   );
 };
 
-const CardHeader = ({ className, ...props }: ComponentProps<"div">) => {
+const Header = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div className={cn("text-xl leading-6 font-bold", className)} {...props} />
   );
 };
 
-const CardIcon = ({ className, ...props }: ComponentProps<"div">) => {
+const Icon = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
       className={cn("top-8 right-8 text-taupe-300 md:absolute", className)}
@@ -36,7 +36,10 @@ const CardIcon = ({ className, ...props }: ComponentProps<"div">) => {
   );
 };
 
-const CardDescription = ({ className, ...props }: ComponentProps<"div">) => {
+const Description = ({
+  className,
+  ...props
+}: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
       className={cn("text-sm text-pretty text-taupe-300", className)}
@@ -45,14 +48,16 @@ const CardDescription = ({ className, ...props }: ComponentProps<"div">) => {
   );
 };
 
-const CardContent = ({ className, ...props }: ComponentProps<"div">) => {
+const Content = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div className={cn("pt-4 pb-8 text-taupe-200", className)} {...props} />
   );
 };
 
-const CardFooter = ({ className, ...props }: ComponentProps<"div">) => {
+const Footer = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return <div className={cn("text-taupe-200", className)} {...props} />;
 };
 
-export { Card, CardHeader, CardIcon, CardDescription, CardContent, CardFooter };
+const Card = { Root, Header, Icon, Description, Content, Footer };
+
+export default Card;

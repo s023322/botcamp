@@ -1,4 +1,4 @@
-import { flyUp } from "@/components/animation/animationValues";
+import { AnimationStagger, flyUp } from "@/components/presets/animationPresets";
 import { motion } from "motion/react";
 import { Children, PropsWithChildren } from "react";
 
@@ -12,7 +12,7 @@ const FlyText = ({
         <>
           <motion.span
             className="inline-block"
-            {...flyUp(delay + index * 0.25)}
+            {...flyUp(delay + index * AnimationStagger)}
           >
             {child}
           </motion.span>{" "}

@@ -1,9 +1,9 @@
 "use client";
 
-import Logo from "@/components/brand/Logo";
+import Logo from "@/components/ui/brand/Logo";
 import Button from "@/components/ui/button/Button";
-import CenteredCol from "@/components/ui/responsive/CenteredCol";
-import ResponsiveCols from "@/components/ui/responsive/ResponsiveCols";
+import CenteredCol from "@/components/ui/dynamic/CenteredCol";
+import ResponsiveCols from "@/components/ui/dynamic/ResponsiveCols";
 import Link from "next/link";
 
 const Navbar = () => {

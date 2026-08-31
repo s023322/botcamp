@@ -1,4 +1,4 @@
-import { PolymorphicProps } from "@/types/polymorphic";
+import { DynamicProps } from "@/types/dynamic";
 import { cn } from "@sglara/cn";
 import { ElementType } from "react";
 
@@ -7,7 +7,7 @@ const ResponsiveCols = <E extends ElementType = "div">({
   className,
   children,
   ...props
-}: PolymorphicProps<E, { className?: string }>) => {
+}: DynamicProps<E>) => {
   const Component = (as || "div") as ElementType;
 
   return (

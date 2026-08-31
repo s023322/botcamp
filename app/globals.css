@@ -1,44 +1,11 @@
 @import "tailwindcss";
 
-/* -------------------------------------------------------------------------- */
-/* Font Fallback Overrides for Zero-CLS Font Swapping                         */
-/* -------------------------------------------------------------------------- */
-
-/* DraftingMono Fallback (Fixed-pitch monospace match: 0.60em character width) */
-@font-face {
-  font-family: "DraftingMono Fallback";
-  src: local("Courier New"), local("Courier"), local("Menlo");
-  ascent-override: 91.5%;
-  descent-override: 30.9%;
-  line-gap-override: 9%;
-  size-adjust: 100%;
-}
-
-/* Gnomon Fallback (Display sans-serif match with corrected descender metrics) */
-@font-face {
-  font-family: "Gnomon Fallback";
-  src: local("Arial"), local("Helvetica Neue");
-  ascent-override: 96.56%;
-  descent-override: 27.37%;
-  line-gap-override: 0%;
-  size-adjust: 91.34%;
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@custom-variant c (:where(&));
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --font-sans: var(--font-diamond-grotesk);
+@theme {
   --font-mono: var(--font-drafting-mono);
+  --font-sans: var(--font-diamond-grotesk);
+  --font-serif: var(--font-zarathustra);
 
-  --font-header: var(--font-zarathustra);
+  --font-header: var(--font-serif);
   --font-body: var(--font-sans);
 }
 

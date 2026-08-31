@@ -8,26 +8,48 @@ import {
   ToolRegular,
 } from "@mingcute/react/core-regular";
 import Button from "@/components/ui/button/Button";
-import ResponsiveCols from "@/components/ui/responsive/ResponsiveCols";
+import ResponsiveCols from "@/components/ui/dynamic/ResponsiveCols";
 import Banner from "@/components/ui/banner/Banner";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardIcon,
-} from "@/components/ui/card/Card";
+import Card from "@/components/ui/card/Card";
 import CardWrapper from "@/components/ui/card/CardWrapper";
 import { motion } from "motion/react";
-import Logo from "@/components/brand/Logo";
-import AnimatedCenteredCol from "@/components/ui/animated/AnimatedCenteredCol";
+import Logo from "@/components/ui/brand/Logo";
 import Link from "next/link";
-import CenteredCol from "@/components/ui/responsive/CenteredCol";
-import FlyText from "./components/ui/animated/FlyText";
-import { flyUp } from "./components/animation/animationValues";
+import CenteredCol from "@/components/ui/dynamic/CenteredCol";
+import FlyText from "@/components/ui/animated/FlyText";
+import { flyUp } from "@/components/presets/animationPresets";
 
 export default function Home() {
+  const courseCards = [
+    {
+      icon: <HexagonsRegular />,
+      title: "Fundamentals",
+      description: "Learn the basics of generative AI&apos;s functionality",
+      concepts: ['What is "AI?"', "How does it work", "Why does it matter"],
+    },
+    {
+      icon: <ToolRegular />,
+      title: "Applications",
+      description:
+        "Find useful tools and techniques that leverage AI's strengths",
+      concepts: [
+        "When should I use it?",
+        "What is it strongest at?",
+        "How can I use its strengths?",
+      ],
+    },
+    {
+      icon: <BalanceRegular />,
+      title: "Ethics",
+      description: "Understand how to make better decisions with AI",
+      concepts: [
+        "When can I not use it?",
+        "What are its limitations?",
+        "What makes it dangerous?",
+      ],
+    },
+  ];
+
   return (
     <main className="contents">
       <Banner>
@@ -41,6 +63,7 @@ export default function Home() {
       </Banner>
       <ResponsiveCols as="section" className="relative">
         <CenteredCol className="h-[calc(100dvh-5.5rem)]">
+          <Logo {...flyUp(1)} className="mb-1 text-2xl" />
           <div className="mb-8 max-w-xl md:max-w-dvw">
             <h1 className="font-header mb-2 text-center text-6xl tracking-tight md:text-7xl lg:text-8xl">
               <FlyText>
@@ -52,14 +75,14 @@ export default function Home() {
               </FlyText>
             </h1>
             <motion.p
-              {...flyUp(1)}
+              {...flyUp(1.25)}
               className="text-center text-balance text-taupe-300"
             >
-              <Logo withText /> is a learning platform built to bridge the gap
-              between young innovators and AI.
+              Botcamp is a learning platform built to bridge the gap between
+              young innovators and AI.
             </motion.p>
           </div>
-          <motion.div {...flyUp(1.25)} className="mb-1 flex gap-x-2">
+          <motion.div {...flyUp(1.5)} className="mb-1 flex gap-x-2">
             <Button variant="primary" as={Link} href="/">
               <p>Start today</p>
               <RightRegular />
@@ -68,10 +91,11 @@ export default function Home() {
               Log in
             </Button>
           </motion.div>
+          <div className="h-16" />
         </CenteredCol>
       </ResponsiveCols>
-      <ResponsiveCols as="section" className="relative max-h-screen">
-        <AnimatedCenteredCol as={motion.div} className="relative py-16">
+      <ResponsiveCols as="section" className="bg-taupe-900/50">
+        <CenteredCol as={motion.div} className="relative py-16" animated>
           <div className="mb-8 max-w-xl">
             <h1 className="font-header mb-2 text-center text-5xl tracking-tight">
               Courses built for <span className="text-red-400">you.</span>
@@ -81,75 +105,28 @@ export default function Home() {
             </div>
           </div>
           <CardWrapper className="grid-col-taupe-800 *:border-none">
-            <Card subgrid>
-              <CardIcon>
-                <HexagonsRegular />
-              </CardIcon>
-              <CardHeader>Fundamentals</CardHeader>
-              <CardDescription>
-                Learn the basics of generative AI&apos;s functionality
-              </CardDescription>
-              <CardContent>
-                <ul className="ml-4 list-disc leading-relaxed">
-                  <li>What is &quot;AI?&quot;</li>
-                  <li>How does it work?</li>
-                  <li>Why does it matter?</li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button variant="secondary" className="w-full">
-                  <p>Learn More</p>
-                  <RightRegular />
-                </Button>
-              </CardFooter>
-            </Card>
-            <Card subgrid>
-              <CardIcon>
-                <ToolRegular />
-              </CardIcon>
-              <CardHeader>Applications</CardHeader>
-              <CardDescription>
-                Find useful tools and techniques that leverage AI&apos;s
-                strengths
-              </CardDescription>
-              <CardContent>
-                <ul className="ml-4 list-disc leading-relaxed">
-                  <li>When should I use it?</li>
-                  <li>What is it strongest at?</li>
-                  <li>How can I use its strengths?</li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button variant="secondary" className="w-full">
-                  <p>Learn More</p>
-                  <RightRegular />
-                </Button>
-              </CardFooter>
-            </Card>
-            <Card subgrid>
-              <CardIcon>
-                <BalanceRegular />
-              </CardIcon>
-              <CardHeader>Ethics</CardHeader>
-              <CardDescription>
-                Understand how to make better decisions with AI
-              </CardDescription>
-              <CardContent>
-                <ul className="ml-4 list-disc leading-relaxed">
-                  <li>When can I not use it?</li>
-                  <li>What are its limitations?</li>
-                  <li>What makes it dangerous?</li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button variant="secondary" className="w-full">
-                  <p>Learn More</p>
-                  <RightRegular />
-                </Button>
-              </CardFooter>
-            </Card>
+            {courseCards.map((courseCard) => (
+              <Card.Root key={courseCard.title} subgrid>
+                <Card.Icon>{courseCard.icon}</Card.Icon>
+                <Card.Header>{courseCard.title}</Card.Header>
+                <Card.Description>{courseCard.description}</Card.Description>
+                <Card.Content>
+                  <ul className="ml-4 list-disc leading-relaxed">
+                    {courseCard.concepts.map((concept) => (
+                      <li key={concept}>{concept}</li>
+                    ))}
+                  </ul>
+                </Card.Content>
+                <Card.Footer>
+                  <Button variant="secondary" className="w-full">
+                    <p>Learn More</p>
+                    <RightRegular />
+                  </Button>
+                </Card.Footer>
+              </Card.Root>
+            ))}
           </CardWrapper>
-        </AnimatedCenteredCol>
+        </CenteredCol>
       </ResponsiveCols>
       <div className="h-screen" />
     </main>
