@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path
+        transform="translate(4.9995,4.9995)"
+        d="m24 6.0005v-5a3.0001 3.0001 45.001 0 0-3-3.0001l-20-3.846e-4a2.9999 2.9999 135 0 0-3 2.9999v20a3 3 45 0 0 3 3h20a3 3 135 0 0 3-3v-5"
+        fill="color-mix(in oklch, currentColor 20%, #09090b)"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.999"
+    />
+<path
+        d="m13 16v2m6-2v2m-3-9v2m0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-7 6h-0.5a1.5 1.5 0 0 0 0 3h0.5zm14 0h0.5a1.5 1.5 0 0 1 0 3h-0.5zm-11 8h8a3 3 0 0 0 3-3v-6a3 3 0 0 0-3-3h-8a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3z"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="1.9994"
+    />
+</svg>

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* Font Fallback Overrides for Zero-CLS Font Swapping                         */
+/* -------------------------------------------------------------------------- */
+
+/* DraftingMono Fallback (Fixed-pitch monospace match: 0.60em character width) */
+@font-face {
+  font-family: "DraftingMono Fallback";
+  src: local("Courier New"), local("Courier"), local("Menlo");
+  ascent-override: 91.5%;
+  descent-override: 30.9%;
+  line-gap-override: 9%;
+  size-adjust: 100%;
+}
+
+/* Gnomon Fallback (Display sans-serif match with corrected descender metrics) */
+@font-face {
+  font-family: "Gnomon Fallback";
+  src: local("Arial"), local("Helvetica Neue");
+  ascent-override: 96.56%;
+  descent-override: 27.37%;
+  line-gap-override: 0%;
+  size-adjust: 91.34%;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@custom-variant c (:where(&));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-diamond-grotesk);
+  --font-mono: var(--font-drafting-mono);
+
+  --font-header: var(--font-zarathustra);
+  --font-body: var(--font-sans);
+}
+
+@utility trim-both {
+  text-box-trim: trim-both;
+}
+
+@utility cap-alpha {
+  text-box-edge: cap alphabetic;
+}
+
+@utility grid-container {
+  @apply grid grid-flow-row auto-rows-min grid-cols-[0_100%_0] sm:grid-cols-[auto_39rem_auto] md:grid-cols-[auto_47rem_auto] lg:grid-cols-[auto_63rem_auto];
+  row-rule: 1px solid var(--color-zinc-900);
+  & > .grid {
+      column-rule: 1px solid var(--color-zinc-900);
+  }
+}
+
+body {
+  @apply font-body bg-zinc-950 text-zinc-50;
+}
+
+html {
+  scrollbar-gutter: stable both-edges;
+  scrollbar-width: thin;
+}
