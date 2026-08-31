@@ -7,9 +7,7 @@ const CenteredCol = <E extends ElementType = "div">({
   className,
   children,
   ...props
-}: {
-  as?: "div" | "nav";
-} & PolymorphicProps<E, { className: string }>) => {
+}: PolymorphicProps<E, { className?: string }>) => {
   const Component = (as || "div") as ElementType;
   return (
     <Component

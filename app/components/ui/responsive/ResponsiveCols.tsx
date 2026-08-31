@@ -7,9 +7,7 @@ const ResponsiveCols = <E extends ElementType = "div">({
   className,
   children,
   ...props
-}: {
-  as?: "section" | "div" | "header";
-} & PolymorphicProps<E, { className: string }>) => {
+}: PolymorphicProps<E, { className?: string }>) => {
   const Component = (as || "div") as ElementType;
 
   return (

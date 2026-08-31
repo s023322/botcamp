@@ -1,3 +1,5 @@
+"use client";
+
 import { CloseRegular } from "@mingcute/react/core-regular";
 import Button from "@/components/ui/button/Button";
 import CenteredCol from "@/components/ui/responsive/CenteredCol";
