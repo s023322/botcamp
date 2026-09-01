@@ -3,16 +3,21 @@ import Logo from "@/components/ui/branding/logo";
 import Card from "@/components/ui/display/card";
 import Input from "@/components/ui/forms/input";
 import InputDescriptor from "@/components/ui/forms/input-descriptor";
-import { GoogleFilled } from "@mingcute/react/core-filled";
+import AnimationPresets from "@/lib/animation-presets";
 import {
   RightRegular,
   IncognitoModeRegular,
+  GoogleRegular,
 } from "@mingcute/react/core-regular";
+import { motion } from "motion/react";
 import Link from "next/link";
 
 const AuthCard = ({ type }: { type: "Sign up" | "Log in" }) => {
   return (
-    <form className="w-full max-w-lg self-center">
+    <motion.form
+      className="w-full max-w-lg self-center"
+      {...AnimationPresets.flyUp()}
+    >
       <Card.Root className="max-sm:border-none">
         <Card.Icon>
           <Logo />
@@ -76,10 +81,11 @@ const AuthCard = ({ type }: { type: "Sign up" | "Log in" }) => {
           </InputDescriptor.Label>
           {type === "Log in" && (
             <Button
+              variant="link"
               as={Link}
               href="/"
               sizeVariant="compact"
-              className="-mt-3 -mb-6 ml-auto w-max font-bold tracking-wide text-pr-80"
+              className="-mt-3 -mb-6 ml-auto w-max"
             >
               Forgot password?
             </Button>
@@ -90,26 +96,27 @@ const AuthCard = ({ type }: { type: "Sign up" | "Log in" }) => {
             <p>{type === "Sign up" ? "Create account" : "Enter account"}</p>{" "}
             <RightRegular />
           </Button>
-          <div className="my-2 flex items-center gap-x-4 text-nt-20">
+          <div className="my-2 flex items-center gap-x-4 text-nt-50">
             <div className="flex-1 border-b" />
-            <p className="text-sm text-nt-50">or</p>
+            <p>or</p>
             <div className="flex-1 border-b" />
           </div>
-          <Button as="button" variant="secondary" type="submit">
-            <GoogleFilled />
+          <Button as="button" variant="outline" type="submit">
+            <GoogleRegular />
             <p>Continue with Google</p>
           </Button>
-          <Button as="button" variant="secondary" type="submit">
+          <Button as="button" variant="outline" type="submit">
             <IncognitoModeRegular />
             <p>Continue anonymously</p>
           </Button>
-          <div className="mt-2 -mb-3.5 flex items-center justify-center gap-x-1 text-sm text-nt-95">
+          <div className="mt-2 -mb-3.5 flex items-center justify-center gap-x-1 text-sm">
             <p>Already have an account?</p>
             <Button
+              variant="link"
               as={Link}
               href={type === "Sign up" ? "/log-in" : "/sign-up"}
               sizeVariant="compact"
-              className="self-center font-bold tracking-wide text-pr-80"
+              className="self-center"
             >
               <p>{type === "Sign up" ? "Log in" : "Sign up"}</p>
               <RightRegular />
@@ -117,7 +124,7 @@ const AuthCard = ({ type }: { type: "Sign up" | "Log in" }) => {
           </div>
         </Card.Footer>
       </Card.Root>
-    </form>
+    </motion.form>
   );
 };
 

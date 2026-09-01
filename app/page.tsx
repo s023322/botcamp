@@ -51,7 +51,7 @@ const Home = () => {
   return (
     <main className="contents">
       <Banner>
-        <p className="font-header text-sm font-bold text-pr-50">Judges:</p>
+        <p className="font-header text-sm text-pr-50">Judges:</p>
         <Button sizeVariant="compact" className="text-nt-95" as={Link} href="/">
           <p>Try demo accounts and view documents here</p>
           <ArrowRightRegular className="inline" size={16} />
@@ -91,11 +91,11 @@ const Home = () => {
             {...AnimationPresets.flyUp(AnimationPresets.animationStagger * 5)}
             className="mb-1 flex gap-x-2"
           >
-            <Button variant="primary" as={Link} href="/">
+            <Button variant="primary" as={Link} href="/sign-up">
               <p>Start today</p>
               <RightRegular />
             </Button>
-            <Button variant="secondary" as={Link} href="/">
+            <Button variant="secondary" as={Link} href="/log-in">
               Log in
             </Button>
           </motion.div>
@@ -126,7 +126,7 @@ const Home = () => {
                   </ul>
                 </Card.Content>
                 <Card.Footer>
-                  <Button variant="ghost">
+                  <Button variant="link">
                     <p>Learn More</p>
                     <RightRegular />
                   </Button>

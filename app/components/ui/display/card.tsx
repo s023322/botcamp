@@ -9,7 +9,7 @@ const Root = ({
   return (
     <div
       className={cn(
-        "relative gap-y-2 rounded-4xl border border-nt-20 p-8",
+        "relative gap-y-2 rounded-4xl border border-nt-20 p-8 text-nt-95",
         {
           "row-span-5 grid grid-rows-subgrid md:row-span-4": subgrid,
           "flex flex-col": !subgrid,
@@ -34,7 +34,7 @@ const Icon = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
       className={cn(
-        "top-8 right-8 text-nt-70 *:size-8 *:text-[2rem] md:absolute md:*:size-6 md:*:text-2xl",
+        "top-8 right-8 text-inherit *:size-8 *:text-[2rem] md:absolute md:*:size-6 md:*:text-2xl",
         className,
       )}
       {...props}
@@ -55,13 +55,13 @@ const Description = ({
 };
 
 const Content = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
-  return <div className={cn("pt-4 pb-8 text-nt-80", className)} {...props} />;
+  return <div className={cn("pt-4 pb-8", className)} {...props} />;
 };
 
 const Footer = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
-      className={cn("flex flex-col items-start gap-y-2 text-nt-80", className)}
+      className={cn("flex flex-col items-start gap-y-2", className)}
       {...props}
     />
   );

@@ -12,10 +12,7 @@ const Logo = ({
 } & ComponentPropsWithoutRef<"span"> &
   MotionProps) => {
   return (
-    <motion.span
-      {...props}
-      className={cn("tracking-normal text-pr-50", className)}
-    >
+    <motion.span {...props} className={cn("text-pr-50", className)}>
       <LogoSvg
         className={cn("size-[1em]", {
           "mt-[-0.21875em] inline-block": withText,

@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 
 const Label = ({ children }: PropsWithChildren) => {
   return (
-    <label className="text-sm font-bold tracking-wide text-nt-95 *:first:after:ml-0.5 *:first:after:text-pr-50 *:first:after:content-['*'] has-[input:required]:*:first:after:inline [&>input]:mt-0.5">
+    <label className="text-sm text-nt-95 *:first:after:ml-0.5 *:first:after:content-['*'] has-[input:required]:*:first:after:inline [&>input]:mt-0.5">
       {children}
     </label>
   );
@@ -14,12 +14,7 @@ const Description = ({
   className,
 }: { className?: string } & PropsWithChildren) => {
   return (
-    <span
-      className={cn(
-        "mt-1.5 text-xs leading-tight font-normal text-nt-80",
-        className,
-      )}
-    >
+    <span className={cn("mt-1.5 text-xs leading-2 text-nt-70", className)}>
       {children}
     </span>
   );

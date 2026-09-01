@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 const RootWrapper = ({ children }: PropsWithChildren) => {
   return (
-    <div className="grid-cols-responsive grid-row-nt-20 relative grid w-full flex-1 grid-flow-row auto-rows-min flex-col items-stretch">
+    <div className="relative grid w-full flex-1 grid-flow-row auto-rows-min grid-cols-responsive flex-col items-stretch grid-row-nt-20">
       {children}
     </div>
   );

@@ -4,11 +4,9 @@ import { PropsWithChildren } from "react";
 
 const Banner = ({ children }: PropsWithChildren) => {
   return (
-    <ResponsiveWrapper className="bg-pr-10 border-pr-20 -mb-px border-y">
+    <ResponsiveWrapper className="-mb-px border-y border-pr-10 bg-pr-05">
       <CenteredWrapper className="py-2">
-        <div className="flex items-center justify-center gap-x-2">
-          {children}
-        </div>
+        <div className="flex items-center justify-center">{children}</div>
       </CenteredWrapper>
     </ResponsiveWrapper>
   );

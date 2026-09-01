@@ -21,15 +21,15 @@
 
   --color-secondary-50: oklch(0.964 0.027 217.09);
   --color-secondary-100: oklch(0.916 0.065 215.68);
-  --color-secondary-200: oklch(0.832 0.144 211.19);
+  --color-secondary-200: oklch(0.832 0.082 211.19);
   --color-secondary-300: oklch(0.764 0.133 211.15);
   --color-secondary-400: oklch(0.686 0.12 212.02);
   --color-secondary-500: oklch(0.611 0.106 211.4);
   --color-secondary-600: oklch(0.535 0.093 211.48);
   --color-secondary-700: oklch(0.432 0.075 211.44);
-  --color-secondary-800: oklch(0.34 0.059 210.36);
-  --color-secondary-900: oklch(0.239 0.041 210.95);
-  --color-secondary-950: oklch(0.184 0.032 213.34);
+  --color-secondary-800: oklch(0.34 0.065 210.36);
+  --color-secondary-900: oklch(0.239 0.051 210.95);
+  --color-secondary-950: oklch(0.184 0.042 213.34);
 
   --color-neutral-50: oklch(0.957 0.005 247.84);
   --color-neutral-100: oklch(0.923 0.009 247.9);
@@ -132,7 +132,8 @@
 }
 
 body {
-  @apply font-body bg-nt-05 text-nt-95;
+  text-rendering: optimizeLegibility;
+  @apply bg-nt-05 font-body text-nt-95;
 }
 
 html {

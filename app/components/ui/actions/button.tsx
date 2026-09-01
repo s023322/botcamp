@@ -9,7 +9,7 @@ const Button = <E extends ElementType = "button">({
   className,
   ...props
 }: {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "link" | "ghost";
   sizeVariant?: "normal" | "compact" | "iconNormal" | "iconCompact";
 } & DynamicProps<E>) => {
   const Component = (as || "button") as ElementType;
@@ -17,19 +17,25 @@ const Button = <E extends ElementType = "button">({
   return (
     <Component
       className={cn(
-        "flex cursor-pointer items-center justify-center gap-x-1 rounded-xl border font-body text-sm whitespace-nowrap text-nt-95 select-none active:translate-y-px [&>svg]:size-4",
+        "flex cursor-pointer items-center justify-center gap-x-1 rounded-xl border font-body text-sm whitespace-nowrap select-none active:translate-y-px [&>svg]:size-4",
         {
-          "font-bold tracking-wide not-active:shadow-[inset_0_-0.0625rem]":
-            variant === "primary" || variant === "secondary",
-          "border-pr-50 bg-pr-40 shadow-pr-50 hover:bg-pr-30 dark:border-pr-20 dark:bg-pr-50 dark:shadow-pr-20 dark:hover:bg-pr-40":
+          "not-active:shadow-[inset_0_-0.0625rem]":
+            variant === "primary" ||
+            variant === "secondary" ||
+            variant === "outline",
+          "border-primary-700 bg-primary-500 text-neutral-50 shadow-primary-700 hover:bg-primary-600":
             variant === "primary",
-          "border-nt-30 bg-nt-10 shadow-nt-30 hover:bg-nt-95/10":
+          "border-se-20 bg-se-10/50 text-nt-95 shadow-se-20 hover:bg-se-10":
             variant === "secondary",
-          "border-transparent bg-transparent text-nt-95 hover:bg-nt-95/10":
-            variant === "ghost",
+          "border-nt-20 bg-nt-10/50 text-nt-95 shadow-nt-20 hover:bg-nt-10":
+            variant === "outline",
+          "border-transparent bg-transparent":
+            variant === "ghost" || variant === "link",
+          "text-se-90 hover:bg-se-95/5": variant === "link",
+          "text-nt-95 hover:bg-nt-95/5": variant === "ghost",
         },
         {
-          "h-8 px-3 pt-0.5 *:first:[svg]:-ml-1 *:last:[svg]:-mr-1 [&>svg]:-mt-0.75":
+          "h-8 px-3 pt-px *:first:[svg]:-ml-1 *:last:[svg]:-mr-1 [&>svg]:-mt-0.75":
             sizeVariant === "normal",
           "h-6 px-2.5 pt-px *:first:[svg]:-ml-1.5 *:last:[svg]:-mr-1.5 [&>svg]:-mt-0.5":
             sizeVariant === "compact",
