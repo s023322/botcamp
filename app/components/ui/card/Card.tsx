@@ -9,7 +9,7 @@ const Root = ({
   return (
     <div
       className={cn(
-        "relative gap-y-2 border border-taupe-800 p-8",
+        "relative gap-y-2 border border-neutral-800 p-8",
         {
           "row-span-5 grid grid-rows-subgrid md:row-span-4": subgrid,
           "flex flex-col": !subgrid,
@@ -30,7 +30,7 @@ const Header = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
 const Icon = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
-      className={cn("top-8 right-8 text-taupe-300 md:absolute", className)}
+      className={cn("top-8 right-8 text-neutral-300 md:absolute", className)}
       {...props}
     />
   );
@@ -42,7 +42,7 @@ const Description = ({
 }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
-      className={cn("text-sm text-pretty text-taupe-300", className)}
+      className={cn("text-sm text-pretty text-neutral-300", className)}
       {...props}
     />
   );
@@ -50,12 +50,12 @@ const Description = ({
 
 const Content = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
-    <div className={cn("pt-4 pb-8 text-taupe-200", className)} {...props} />
+    <div className={cn("pt-4 pb-8 text-neutral-200", className)} {...props} />
   );
 };
 
 const Footer = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
-  return <div className={cn("text-taupe-200", className)} {...props} />;
+  return <div className={cn("text-neutral-200", className)} {...props} />;
 };
 
 const Card = { Root, Header, Icon, Description, Content, Footer };

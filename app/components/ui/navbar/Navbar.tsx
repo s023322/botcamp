@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <ResponsiveCols
       as="header"
-      className="sticky top-0 z-10 border-b border-b-taupe-800 bg-taupe-950"
+      className="sticky top-0 z-10 border-b border-b-neutral-800 bg-neutral-950"
     >
       <CenteredCol as="nav" className="flex-row gap-x-2 py-2">
         <Logo withText className="ml-1.5 text-2xl" />
@@ -25,7 +25,7 @@ const Navbar = () => {
           <Button variant="ghost" as={Link} href="/">
             About
           </Button>
-          <div className="mr-2.5 self-stretch border-r border-r-taupe-800" />
+          <div className="mr-2.5 self-stretch border-r border-r-neutral-800" />
           <Button variant="secondary" as={Link} href="/">
             Log in
           </Button>

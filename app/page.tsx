@@ -24,7 +24,7 @@ export default function Home() {
     {
       icon: <HexagonsRegular />,
       title: "Fundamentals",
-      description: "Learn the basics of generative AI&apos;s functionality",
+      description: "Learn the basics of generative AI's functionality",
       concepts: ['What is "AI?"', "How does it work", "Why does it matter"],
     },
     {
@@ -53,10 +53,10 @@ export default function Home() {
   return (
     <main className="contents">
       <Banner>
-        <p className="trim-both font-header text-sm font-bold text-red-400">
+        <p className="trim-both font-header text-primary-400 text-sm font-bold">
           Judges:
         </p>
-        <Button size="compact" className="text-red-50" as={Link} href="/">
+        <Button size="compact" className="text-neutral-50" as={Link} href="/">
           <p>Try demo accounts and view documents here</p>
           <ArrowRightRegular className="inline" size={16} />
         </Button>
@@ -76,7 +76,7 @@ export default function Home() {
             </h1>
             <motion.p
               {...flyUp(1.25)}
-              className="text-center text-balance text-taupe-300"
+              className="text-center text-balance text-neutral-300"
             >
               Botcamp is a learning platform built to bridge the gap between
               young innovators and AI.
@@ -94,17 +94,17 @@ export default function Home() {
           <div className="h-16" />
         </CenteredCol>
       </ResponsiveCols>
-      <ResponsiveCols as="section" className="bg-taupe-900/50">
+      <ResponsiveCols as="section" className="bg-neutral-900/50">
         <CenteredCol as={motion.div} className="relative py-16" animated>
           <div className="mb-8 max-w-xl">
             <h1 className="font-header mb-2 text-center text-5xl tracking-tight">
-              Courses built for <span className="text-red-400">you.</span>
+              Courses built for <span className="text-primary-400">you.</span>
             </h1>
-            <div className="text-center text-balance text-taupe-300">
+            <div className="text-center text-balance text-neutral-300">
               Made by real people for real world use.
             </div>
           </div>
-          <CardWrapper className="grid-col-taupe-800 *:border-none">
+          <CardWrapper className="grid-col-neutral-800 *:border-none">
             {courseCards.map((courseCard) => (
               <Card.Root key={courseCard.title} subgrid>
                 <Card.Icon>{courseCard.icon}</Card.Icon>

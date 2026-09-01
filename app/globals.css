@@ -1,6 +1,44 @@
 @import "tailwindcss";
 
 @theme {
+    --color-*: initial;
+
+    --color-primary-50: oklch(0.958 0.016 12.9);
+    --color-primary-100: oklch(0.918 0.035 13.42);
+    --color-primary-200: oklch(0.844 0.07 15.33);
+    --color-primary-300: oklch(0.763 0.115 16.07);
+    --color-primary-400: oklch(0.684 0.168 18.23);
+    --color-primary-500: oklch(0.61 0.21 20.78);
+    --color-primary-600: oklch(0.514 0.177 20.9);
+    --color-primary-700: oklch(0.422 0.145 20.76);
+    --color-primary-800: oklch(0.332 0.114 20.62);
+    --color-primary-900: oklch(0.235 0.081 21.22);
+    --color-primary-950: oklch(0.185 0.065 20.52);
+
+    --color-secondary-50: oklch(0.964 0.027 217.09);
+    --color-secondary-100: oklch(0.916 0.065 215.68);
+    --color-secondary-200: oklch(0.832 0.144 211.19);
+    --color-secondary-300: oklch(0.764 0.133 211.15);
+    --color-secondary-400: oklch(0.686 0.12 212.02);
+    --color-secondary-500: oklch(0.611 0.106 211.4);
+    --color-secondary-600: oklch(0.535 0.093 211.48);
+    --color-secondary-700: oklch(0.432 0.075 211.44);
+    --color-secondary-800: oklch(0.34 0.059 210.36);
+    --color-secondary-900: oklch(0.239 0.041 210.95);
+    --color-secondary-950: oklch(0.184 0.032 213.34);
+
+    --color-neutral-50: oklch(0.957 0.005 247.84);
+    --color-neutral-100: oklch(0.923 0.009 247.9);
+    --color-neutral-200: oklch(0.844 0.018 248.02);
+    --color-neutral-300: oklch(0.766 0.028 246.43);
+    --color-neutral-400: oklch(0.679 0.027 246.34);
+    --color-neutral-500: oklch(0.603 0.024 246.04);
+    --color-neutral-600: oklch(0.525 0.021 245.62);
+    --color-neutral-700: oklch(0.43 0.018 245.02);
+    --color-neutral-800: oklch(0.336 0.013 238.91);
+    --color-neutral-900: oklch(0.233 0.01 248.24);
+    --color-neutral-950: oklch(0.189 0.006 236.91);
+
   --font-mono: var(--font-drafting-mono);
   --font-sans: var(--font-diamond-grotesk);
   --font-serif: var(--font-zarathustra);
@@ -21,16 +59,16 @@
   @apply grid-cols-[0_100%_0] sm:grid-cols-[auto_39rem_auto] md:grid-cols-[auto_47rem_auto] lg:grid-cols-[auto_63rem_auto];
 }
 
-@utility grid-row-taupe-800 {
-  row-rule: 1px solid var(--color-taupe-800);
+@utility grid-row-neutral-800 {
+  row-rule: 1px solid var(--color-neutral-800);
 }
 
-@utility grid-col-taupe-800 {
-  column-rule: 1px solid var(--color-taupe-800);
+@utility grid-col-neutral-800 {
+  column-rule: 1px solid var(--color-neutral-800);
 }
 
 body {
-  @apply font-body bg-taupe-950 text-taupe-50;
+  @apply font-body bg-neutral-950 text-neutral-50;
 }
 
 html {

@@ -104,8 +104,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${draftingMono.variable} ${diamondGrotesk.variable} ${zarathustra.variable} h-full antialiased`}
     >
-      <body className="font-body relative min-h-full w-full bg-taupe-950">
-        <div className="pointer-events-none fixed inset-0 z-11 inset-shadow-[0_0_0.25rem_0.125rem] inset-shadow-taupe-950" />
+      <body className="font-body relative min-h-full w-full bg-neutral-950">
+        <div className="pointer-events-none fixed inset-0 z-11 inset-shadow-[0_0_0.25rem_0.125rem] inset-shadow-neutral-950" />
         <LenisProvider>
           <ResponsiveWrapper>
             <Navbar />

@@ -21,15 +21,15 @@ const Button = <E extends ElementType = "button">({
   return (
     <Component
       className={cn(
-        "font-body flex cursor-pointer items-center justify-center gap-x-1 rounded-sm border text-sm whitespace-nowrap text-taupe-50 select-none active:translate-y-px [&>svg]:size-4",
+        "font-body flex cursor-pointer items-center justify-center gap-x-1 rounded-xl border text-sm whitespace-nowrap text-neutral-50 select-none active:translate-y-px [&>svg]:size-4",
         {
           "font-bold not-active:shadow-[inset_0_-0.0625rem]":
             variant === "primary" || variant === "secondary",
-          "border-red-800 bg-red-600 shadow-red-800 hover:bg-red-700":
+          "border-primary-800 bg-primary-600 shadow-primary-800 hover:bg-primary-700":
             variant === "primary",
-          "border-taupe-600 bg-taupe-800 shadow-taupe-600 hover:bg-taupe-700":
+          "border-neutral-700 bg-neutral-900 shadow-neutral-700 hover:bg-neutral-800":
             variant === "secondary",
-          "border-transparent bg-transparent hover:bg-taupe-50/15":
+          "hover:bg-gs-50/15 border-transparent bg-transparent text-neutral-50":
             variant === "ghost",
         },
         {

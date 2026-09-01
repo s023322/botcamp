@@ -14,7 +14,7 @@ const Logo = ({
   return (
     <motion.span
       {...props}
-      className={cn("tracking-normal text-red-400", className)}
+      className={cn("text-primary-400 tracking-normal", className)}
     >
       <LogoSvg
         className={cn("size-[1em]", {
