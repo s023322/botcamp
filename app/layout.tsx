@@ -4,6 +4,8 @@ import "@/globals.css";
 import LenisProvider from "@/components/providers/lenis-provider";
 import RootWrapper from "@/components/ui/layout/root-wrapper";
 import Navbar from "@/components/ui/navigation/navbar";
+import { createClient } from "@/lib/supabase/server";
+import { UserData } from "@/lib/supabase/types";
 
 const diamondGrotesk = localFont({
   src: "./fonts/diamond-grotesk-variable.ttf",
@@ -24,7 +26,29 @@ export const metadata: Metadata = {
   description: "Your AI learning platform",
 };
 
-const RootLayout = ({ children }: LayoutProps<"/">) => {
+const RootLayout = async ({ children }: LayoutProps<"/">) => {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let userData: UserData | null = null;
+  if (user) {
+    const { data } = await supabase
+      .from("users")
+      .select()
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    userData = {
+      userId: data.user_id,
+      username: data.username,
+      createdAt: data.created_at,
+      xp: data.xp,
+      isUserOnboarded: data.is_user_onboarded,
+    };
+  }
+
   return (
     <html
       lang="en"
@@ -34,7 +58,7 @@ const RootLayout = ({ children }: LayoutProps<"/">) => {
         <div className="pointer-events-none fixed inset-0 z-11 inset-shadow-[0_0_0.25rem_0.125rem] inset-shadow-nt-05" />
         <LenisProvider>
           <RootWrapper>
-            <Navbar />
+            <Navbar user={userData} />
             {children}
           </RootWrapper>
         </LenisProvider>

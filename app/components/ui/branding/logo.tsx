@@ -1,3 +1,5 @@
+"use client";
+
 import LogoSvg from "@/botcamp.svg";
 import { cn } from "@sglara/cn";
 import { motion, MotionProps } from "motion/react";

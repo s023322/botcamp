@@ -14,7 +14,9 @@ const Description = ({
   className,
 }: { className?: string } & PropsWithChildren) => {
   return (
-    <span className={cn("mt-1.5 text-xs leading-2 text-nt-70", className)}>
+    <span
+      className={cn("mt-1.5 block text-xs leading-tight text-nt-70", className)}
+    >
       {children}
     </span>
   );
