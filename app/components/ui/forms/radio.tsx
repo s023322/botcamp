@@ -70,12 +70,16 @@ const Button = ({
   children: ReactNode | ((props: { checked: boolean }) => ReactNode);
   disabled?: boolean;
 } & Omit<ComponentPropsWithoutRef<"label">, "children">) => {
+  const context = useContext(RadioContext);
+
+  if (!context) throw new Error("Radio.Button must be used within Radio.Root");
+
   const {
     name,
     selectedValue,
     setSelectedValue,
     disabled: rootDisabled,
-  } = useContext(RadioContext);
+  } = context;
   const isChecked = selectedValue === value;
   const isDisabled = rootDisabled || buttonDisabled;
 
