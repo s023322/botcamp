@@ -1,4 +1,4 @@
-import CenteredCardLayout from "@/components/ui/layout/centered-card-layout";
+import CenteredCardLayout from "components/ui/layout/centered-card-layout";
 import { PropsWithChildren } from "react";
 
 const AuthLayout = ({ children }: PropsWithChildren) => {

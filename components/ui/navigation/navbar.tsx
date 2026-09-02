@@ -32,15 +32,13 @@ const Navbar = ({ user }: { user: UserData | null }) => {
             </Button>
           )}
         </div>
-        {user ? (
-          <Button variant="primary" as={Link} href="/sign-up">
-            {user.username || "New User"}
-          </Button>
-        ) : (
-          <Button variant="primary" as={Link} href="/sign-up">
-            Sign up
-          </Button>
-        )}
+        <Button
+          variant="primary"
+          as={Link}
+          href={user ? "/account" : "/sign-up"}
+        >
+          {user ? user.username || "New user" : "Sign up"}
+        </Button>
       </CenteredWrapper>
     </ResponsiveWrapper>
   );

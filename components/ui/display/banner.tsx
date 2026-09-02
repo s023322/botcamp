@@ -1,5 +1,5 @@
-import CenteredWrapper from "@/components/ui/layout/centered-wrapper";
-import ResponsiveWrapper from "@/components/ui/layout/responsive-wrapper";
+import CenteredWrapper from "components/ui/layout/centered-wrapper";
+import ResponsiveWrapper from "components/ui/layout/responsive-wrapper";
 import { PropsWithChildren } from "react";
 
 const Banner = ({ children }: PropsWithChildren) => {

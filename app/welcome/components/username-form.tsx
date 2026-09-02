@@ -1,4 +1,4 @@
-import { changeUsername, SupabaseState } from "@/api/auth/actions";
+import { changeUsername, SupabaseState } from "@/app/api/auth/actions";
 import Button from "@/components/ui/actions/button";
 import Logo from "@/components/ui/branding/logo";
 import Card from "@/components/ui/display/card";
@@ -26,7 +26,7 @@ const UsernameForm = ({ onSuccess }: { onSuccess: () => void }) => {
         </Card.Icon>
         <Card.Header>Welcome to Botcamp!</Card.Header>
         <Card.Content>
-          <UsernameInput setIsValid={(a: boolean) => setIsValid(a)} />
+          <UsernameInput setIsValid={setIsValid} />
         </Card.Content>
         <Card.Footer className="items-stretch">
           <Button

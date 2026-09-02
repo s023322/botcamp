@@ -75,7 +75,7 @@ export const signUp = async (
 
   if (!email || !password) return { error: "Email and password are required" };
   if (password.length < 8)
-    return { error: "Pass word must be at least 8 characters long" };
+    return { error: "Password must be at least 8 characters long" };
 
   const supabase = await createClient();
   const headerList = await headers();

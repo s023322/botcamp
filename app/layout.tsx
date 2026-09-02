@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "@/globals.css";
+import "@/app/globals.css";
 import LenisProvider from "@/components/providers/lenis-provider";
-import RootWrapper from "@/components/ui/layout/root-wrapper";
 import Navbar from "@/components/ui/navigation/navbar";
 import { createClient } from "@/lib/supabase/server";
 import { UserData } from "@/lib/supabase/types";
@@ -22,7 +21,7 @@ const zarathustra = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "botcamp",
+  title: "Botcamp",
   description: "Your AI learning platform",
 };
 
@@ -57,10 +56,10 @@ const RootLayout = async ({ children }: LayoutProps<"/">) => {
       <body className="relative min-h-full w-full bg-nt-05 font-body">
         <div className="pointer-events-none fixed inset-0 z-11 inset-shadow-[0_0_0.25rem_0.125rem] inset-shadow-nt-05" />
         <LenisProvider>
-          <RootWrapper>
+          <div className="relative grid w-full flex-1 grid-flow-row auto-rows-min grid-cols-responsive flex-col items-stretch grid-row-nt-20">
             <Navbar user={userData} />
             {children}
-          </RootWrapper>
+          </div>
         </LenisProvider>
       </body>
     </html>

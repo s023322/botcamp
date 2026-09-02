@@ -1,39 +1,34 @@
-import Input from "@/components/ui/forms/input";
-import InputDescriptor from "@/components/ui/forms/input-descriptor";
+import Input from "components/ui/forms/input";
+import InputDescriptor from "components/ui/forms/input-descriptor";
 import { validateUsername } from "@/lib/username-validation";
 import {
   AlertRegular,
   CheckRegular,
   InformationRegular,
 } from "@mingcute/react/core-regular";
-import { ChangeEventHandler, useState } from "react";
+import { useEffect, useState } from "react";
 
 const UsernameInput = ({
-  setIsValid,
+  setIsValid = (a) => a,
 }: {
   setIsValid: (a: boolean) => void;
 }) => {
-  const [currentTimeout, setCurrentTimeout] = useState<
-    string | number | NodeJS.Timeout | undefined
-  >();
-
   const [validationFeedback, setValidationFeedback] = useState<{
     error?: string;
     valid?: boolean;
   }>({});
 
-  const handleInputChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    clearTimeout(currentTimeout);
+  const [username, setUsername] = useState("");
 
-    const value = e.target.value;
-    setCurrentTimeout(
-      setTimeout(async () => {
-        const usernameValidity = await validateUsername(value);
-        setValidationFeedback(usernameValidity);
-        setIsValid(!!usernameValidity.valid);
-      }, 300),
-    );
-  };
+  useEffect(() => {
+    const delay = setTimeout(async () => {
+      const usernameValidity = await validateUsername(username);
+      setValidationFeedback(usernameValidity);
+      setIsValid(!!usernameValidity.valid);
+    }, 300);
+
+    return () => clearTimeout(delay);
+  }, [username, setIsValid]);
 
   return (
     <>
@@ -43,7 +38,8 @@ const UsernameInput = ({
           name="username"
           className="w-full"
           placeholder="johndoe"
-          onChange={handleInputChange}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
       </InputDescriptor.Label>

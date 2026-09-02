@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.86.181"],
+  reactCompiler: true,
   devIndicators: false,
   turbopack: {
     rules: {

@@ -1,7 +1,7 @@
 "use client";
 
-import CenteredWrapper from "@/components/ui/layout/centered-wrapper";
-import ResponsiveWrapper from "@/components/ui/layout/responsive-wrapper";
+import CenteredWrapper from "components/ui/layout/centered-wrapper";
+import ResponsiveWrapper from "components/ui/layout/responsive-wrapper";
 import AnimationPresets from "@/lib/animation-presets";
 import { motion } from "motion/react";
 import { PropsWithChildren } from "react";

@@ -1,4 +1,4 @@
-import { DynamicProps } from "@/components/patterns/dynamic";
+import { DynamicProps } from "components/patterns/dynamic";
 import { cn } from "@sglara/cn";
 import { ElementType } from "react";
 

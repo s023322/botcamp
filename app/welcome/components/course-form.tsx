@@ -1,16 +1,12 @@
-import { setStartingCourse, SupabaseState } from "@/api/auth/actions";
+import { setStartingCourse, SupabaseState } from "@/app/api/auth/actions";
 import Button from "@/components/ui/actions/button";
 import Logo from "@/components/ui/branding/logo";
 import Card from "@/components/ui/display/card";
-import {
-  BalanceRegular,
-  CheckRegular,
-  HexagonsRegular,
-  ToolRegular,
-} from "@mingcute/react/core-regular";
+import { CheckRegular } from "@mingcute/react/core-regular";
 import { useActionState, useEffect, useState } from "react";
 import Radio from "@/components/ui/forms/radio";
 import { cn } from "@sglara/cn";
+import { courses } from "@/data/courses";
 
 const CourseForm = ({ onSuccess }: { onSuccess: () => void }) => {
   const [selectedCourse, setSelectedCourse] = useState<string>("");
@@ -24,25 +20,6 @@ const CourseForm = ({ onSuccess }: { onSuccess: () => void }) => {
       onSuccess();
     }
   });
-
-  const courses = [
-    {
-      icon: <HexagonsRegular />,
-      title: "Fundamentals",
-      description: "Learn the basics of generative AI's functionality",
-    },
-    {
-      icon: <ToolRegular />,
-      title: "Applications",
-      description:
-        "Find useful tools and techniques that leverage AI's strengths",
-    },
-    {
-      icon: <BalanceRegular />,
-      title: "Ethics",
-      description: "Understand how to make better decisions with AI",
-    },
-  ];
 
   return (
     <form action={formAction} className="w-full max-w-lg self-center">

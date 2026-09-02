@@ -136,7 +136,6 @@ const Home = () => {
           </div>
         </CenteredWrapper>
       </ResponsiveWrapper>
-      <div className="h-screen" />
     </main>
   );
 };

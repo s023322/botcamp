@@ -1,6 +1,6 @@
-import { checkUsernameAvailability } from "@/api/auth/actions";
+import { checkUsernameAvailability } from "@/app/api/auth/actions";
 
-export const usernamePattern = /^[a-z\d\-\_\.]{4,16}$/;
+export const usernamePattern = /^[a-z\d\-\_\.]*$/;
 
 export const validateUsername = async (username: string) => {
   if (username.length == 0) return {};

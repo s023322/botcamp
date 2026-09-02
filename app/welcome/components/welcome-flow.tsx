@@ -1,6 +1,6 @@
 "use client";
 
-import CenteredCardLayout from "@/components/ui/layout/centered-card-layout";
+import CenteredCardLayout from "components/ui/layout/centered-card-layout";
 import UsernameForm from "./username-form";
 import { useState } from "react";
 import CourseForm from "./course-form";

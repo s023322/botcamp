@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/ui/actions/button";
 import Logo from "@/components/ui/branding/logo";
 import Card from "@/components/ui/display/card";
@@ -17,13 +19,13 @@ import {
   signInWithGoogle,
   signInAnonymously,
   SupabaseState,
-} from "@/api/auth/actions";
+} from "@/app/api/auth/actions";
 
 const AuthCard = ({ type }: { type: "Sign up" | "Log in" }) => {
-  const [state, formAction, isPending] = useActionState<
-    SupabaseState,
-    FormData
-  >(type === "Sign up" ? signUp : logIn, null);
+  const [, formAction, isPending] = useActionState<SupabaseState, FormData>(
+    type === "Sign up" ? signUp : logIn,
+    null,
+  );
 
   const [isOAuthPending, startOAuthTransition] = useTransition();
   const [isAnonPending, startAnonTransition] = useTransition();

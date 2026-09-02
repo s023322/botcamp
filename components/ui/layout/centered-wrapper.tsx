@@ -1,4 +1,4 @@
-import { DynamicProps } from "@/components/patterns/dynamic";
+import { DynamicProps } from "components/patterns/dynamic";
 import AnimationPresets from "@/lib/animation-presets";
 import { cn } from "@sglara/cn";
 import { ElementType } from "react";

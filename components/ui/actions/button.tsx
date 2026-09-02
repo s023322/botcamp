@@ -1,5 +1,5 @@
 import { cn } from "@sglara/cn";
-import { DynamicProps } from "@/components/patterns/dynamic";
+import { DynamicProps } from "components/patterns/dynamic";
 import { ElementType } from "react";
 
 const Button = <E extends ElementType = "button">({
