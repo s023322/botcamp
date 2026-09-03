@@ -9,7 +9,7 @@ const Root = ({
   return (
     <div
       className={cn(
-        "relative gap-y-2 rounded-4xl border border-nt-20 px-8 py-7 text-nt-95",
+        "relative gap-y-2 rounded-4xl border border-nt-20 bg-nt-10/25 px-8 py-7 text-nt-95",
         {
           "row-span-5 grid grid-rows-subgrid md:row-span-4": subgrid,
           "flex flex-col": !subgrid,
@@ -23,10 +23,7 @@ const Root = ({
 
 const Header = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
-    <div
-      className={cn("text-xl leading-6 font-bold tracking-wide", className)}
-      {...props}
-    />
+    <div className={cn("text-2xl leading-6 font-bold", className)} {...props} />
   );
 };
 
@@ -34,7 +31,7 @@ const Icon = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
   return (
     <div
       className={cn(
-        "top-7 right-8 text-inherit *:size-8 *:text-[2rem] md:absolute md:*:size-6 md:*:text-2xl",
+        "top-7 right-8 text-inherit *:size-8 *:text-4xl md:absolute md:*:size-6 md:*:text-2xl",
         className,
       )}
       {...props}
@@ -55,7 +52,7 @@ const Description = ({
 };
 
 const Content = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
-  return <div className={cn("pt-4 pb-8", className)} {...props} />;
+  return <div className={cn("pt-4 pb-8 text-base", className)} {...props} />;
 };
 
 const Footer = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {

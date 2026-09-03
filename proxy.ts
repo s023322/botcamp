@@ -36,10 +36,7 @@ export const proxy = async (request: NextRequest) => {
 
   const pathname = request.nextUrl.pathname;
 
-  if (
-    !user &&
-    (pathname.startsWith("/dashboard") || pathname.startsWith("/welcome"))
-  ) {
+  if (!user && pathname.startsWith("/welcome")) {
     const url = request.nextUrl.clone();
     url.pathname = "/log-in";
     return NextResponse.redirect(url);
@@ -55,7 +52,7 @@ export const proxy = async (request: NextRequest) => {
     const isUserOnboarded = userData.is_user_onboarded;
 
     const url = request.nextUrl.clone();
-    url.pathname = isUserOnboarded ? "/dashboard" : "/welcome";
+    url.pathname = isUserOnboarded ? "/" : "/welcome";
 
     if (pathname.startsWith("/welcome") && isUserOnboarded) {
       return NextResponse.redirect(url);
@@ -63,9 +60,7 @@ export const proxy = async (request: NextRequest) => {
 
     if (
       !isUserOnboarded &&
-      (pathname === "/log-in" ||
-        pathname === "/sign-up" ||
-        pathname === "/dashboard")
+      (pathname === "/log-in" || pathname === "/sign-up")
     ) {
       return NextResponse.redirect(url);
     }

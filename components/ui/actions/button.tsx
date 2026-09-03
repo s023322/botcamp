@@ -6,13 +6,11 @@ const Button = <E extends ElementType = "button">({
   variant = "ghost",
   as,
   sizeVariant = "normal",
-  colorOnly,
   className,
   ...props
 }: {
   variant?: "primary" | "secondary" | "outline" | "link" | "ghost";
   sizeVariant?: "normal" | "compact" | "iconNormal" | "iconCompact";
-  colorOnly?: boolean;
 } & DynamicProps<E>) => {
   const Component = (as || "button") as ElementType;
 
@@ -20,8 +18,7 @@ const Button = <E extends ElementType = "button">({
     <Component
       className={cn(
         "cursor-pointer select-none active:translate-y-px disabled:pointer-events-none disabled:opacity-70",
-        !colorOnly &&
-          "flex items-center justify-center gap-x-1 rounded-xl border font-body text-sm whitespace-nowrap [&>svg]:size-4",
+        "flex items-center justify-center gap-x-1 rounded-xl border font-body text-base whitespace-nowrap [&>svg]:size-4",
         {
           "not-active:shadow-[inset_0_-0.0625rem]":
             variant === "primary" ||
@@ -38,13 +35,13 @@ const Button = <E extends ElementType = "button">({
           "text-se-90 hover:bg-se-95/5": variant === "link",
           "text-nt-95 hover:bg-nt-95/5": variant === "ghost",
         },
-        !colorOnly && {
-          "h-8 px-3 pt-px *:first:[svg]:-ml-1 *:last:[svg]:-mr-1 [&>svg]:-mt-0.75":
+        {
+          "px-3 pt-1 pb-0.75 *:[svg]:-mt-0.5 *:first:[svg]:-ml-1 *:last:[svg]:-mr-1":
             sizeVariant === "normal",
-          "h-6 px-2.5 pt-px *:first:[svg]:-ml-1.5 *:last:[svg]:-mr-1.5 [&>svg]:-mt-0.5":
+          "px-2.5 pt-0.5 pb-px *:first:[svg]:-ml-1 *:last:[svg]:-mr-1":
             sizeVariant === "compact",
-          "h-8 px-1.75": sizeVariant === "iconNormal",
-          "h-6 px-0.75": sizeVariant === "iconCompact",
+          "p-1.75": sizeVariant === "iconNormal",
+          "p-0.75": sizeVariant === "iconCompact",
         },
         className,
       )}

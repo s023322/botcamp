@@ -118,7 +118,7 @@ export const logIn = async (
 
   if (error) return { error: error.message };
 
-  redirect("/dashboard");
+  redirect("/");
 };
 
 export const signInWithGoogle = async (): Promise<SupabaseState> => {

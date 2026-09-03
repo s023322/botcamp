@@ -1,8 +1,5 @@
-"use client";
-
 import LogoSvg from "@/app/botcamp.svg";
 import { cn } from "@sglara/cn";
-import { motion, MotionProps } from "motion/react";
 import { ComponentPropsWithoutRef } from "react";
 
 const Logo = ({
@@ -11,10 +8,9 @@ const Logo = ({
   ...props
 }: {
   withText?: boolean;
-} & ComponentPropsWithoutRef<"span"> &
-  MotionProps) => {
+} & ComponentPropsWithoutRef<"span">) => {
   return (
-    <motion.span {...props} className={cn("text-pr-50", className)}>
+    <span {...props} className={cn("whitespace-nowrap text-pr-50", className)}>
       <LogoSvg
         className={cn("size-[1em]", {
           "mt-[-0.21875em] inline-block": withText,
@@ -27,7 +23,7 @@ const Logo = ({
           otcamp
         </span>
       )}
-    </motion.span>
+    </span>
   );
 };
 

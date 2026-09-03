@@ -42,9 +42,7 @@ const CourseForm = ({ onSuccess }: { onSuccess: () => void }) => {
                       <Card.Icon className={cn(checked && "text-se-95")}>
                         {checked ? <CheckRegular /> : course.icon}
                       </Card.Icon>
-                      <Card.Header className="text-lg">
-                        {course.title}
-                      </Card.Header>
+                      <Card.Header>{course.title}</Card.Header>
                       <Card.Content className="pt-2 pb-0">
                         {course.description}
                       </Card.Content>
